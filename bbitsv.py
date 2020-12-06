@@ -219,8 +219,10 @@ def adress_info():
 def answer():
 
     """ Question """
+    
     answer = input("\n Do you start? (y/n): ")
-    if answer.lower() == "y":
+    
+    while answer.lower() == "y":
         status()
         block, pln = data()
         data_block(block, pln)
@@ -229,8 +231,8 @@ def answer():
         list_tx = tx_history(tx_hash)
         dict_tx = tx_info(list_tx, adress)
         out_tx(dict_tx)
+        answer = input("\n Do you start? (y/n): ")
         
-
 status()
 block, pln = data()
 data_block(block, pln)
@@ -241,8 +243,3 @@ dict_tx = tx_info(list_tx, adress)
 out_tx(dict_tx)
 answer()
 input("End..")
-
-
-
-
-
